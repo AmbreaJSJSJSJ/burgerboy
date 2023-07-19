@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tu Hamburguesa Perfecta</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Tu Hamburguesa Perfecta</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#menu"><Menu:c></Menu:c></a>
+          <div class="dropdown-content">
+            <a href="#clasica">Hamburguesa Clasica</a>
+            <a href="#bbq">Hamburguesa BBQ</a>
+            <a href="#bbq">Hamburguesa Vegetariana</a>
+          </div>
+        </li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <h2>Bienvenido a Tu Hamburguesa Perfecta</h2>
+    <p>Disfruta de nuestras deliciosas hamburguesas hechas con ingredientes frescos y sabrosos. Elige tu favorita</p>
+  </section>
+
+  <section id="menu">
+    <h2>Nuestro Menu</h2>
+    <div class="hamburguesas-container">
+      <div class="hamburguesa">
+        <img src="hamburguesa1.jpg" alt="Hamburguesa Clasica">
+        <h3>Hamburguesa Clasica</h3>
+        <p>Ingredientes: Carne, lechuga, tomate, cebolla, queso, salsa especial.</p>
+        <p>Precio: $99.99</p>
+        <button onclick="agregarAlCarrito('Hamburguesa Clasica', 99.99)">Agregar al carrito</button>
+      </div>
+      <div class="hamburguesa">
+        <img src="hamburguesa2.jpg" alt="Hamburguesa BBQ">
+        <h3>Hamburguesa BBQ</h3>
+        <p>Ingredientes: Carne, lechuga, tomate, cebolla, queso, salsa BBQ.</p>
+        <p>Precio: $79.99</p>
+        <button onclick="agregarAlCarrito('Hamburguesa BBQ', 79.99)">Agregar al carrito</button>
+      </div>
+      
+      <div class="hamburguesa">
+        <img src="hamburguesa3.jpg" alt="Hamburguesa Vegetariana">
+        <h3>Hamburguesa Vegetariana</h3>
+        <p>Ingredientes: Hamburguesa de vegetales, lechuga, tomate, cebolla, queso vegano, salsa especial.</p>
+        <p>Precio: $89.99</p>
+        <button onclick="agregarAlCarrito('Hamburguesa Vegetariana', 79.99)">Agregar al carrito</button>
+      </div>
+
+      <div class="hamburguesa">
+        <img src="hamburguesa1.jpg" alt="Hamburguesa Mediterranea:">
+        <h3>Hamburguesa Mediterranea</h3>
+        <p>Ingredientes: Hamburguesa de vegetales, lechuga, tomate, cebolla, queso vegano, salsa especial.</p>
+        <p>Precio: $89.99</p>
+        <button onclick="agregarAlCarrito('Hamburguesa Mediterranea:', 79.99)">Agregar al carrito</button>
+
+      </div>
+
+      <div>
+        <a href="generar_pdf.php" target="_blank">Descargar Menú en PDF</a>
+
+      </div>
+
+      
+
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contactanos</h2>
+    <div class="contacto-container">
+      <form id="formulario-contacto">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+  
+        <button type="submit">Enviar</button>
+      </form>
+  
+      <div class="redes-sociales">
+        <h3>Siguenos en redes sociales:</h3>
+        <ul>
+          <li><a href="https://www.facebook.com/tuhamburguesaperfecta" target="_blank"><img src="facebook.png" alt="Facebook"></a></li>
+          <li><a href="https://www.instagram.com/tuhamburguesaperfecta" target="_blank"><img src="instagram.png" alt="Instagram"></a></li>
+          
+        </ul>
+      </div>
+  
+      <div class="direccion">
+        <h3>Direccion del establecimiento:</h3>
+        <p>And. Roble 15, Ampliacion El Chaparral, Atizapan de Zaragoza</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer>
+    <p>&copy; 2023 Tu Hamburguesa Perfecta. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Funcion para agregar elementos al carrito
+    function agregarAlCarrito(nombre, precio) {
+      var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre: nombre, precio: precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert('El articulo se ha agregado al carrito!');
+    }
+  </script>
+</body>
+</html>
+
